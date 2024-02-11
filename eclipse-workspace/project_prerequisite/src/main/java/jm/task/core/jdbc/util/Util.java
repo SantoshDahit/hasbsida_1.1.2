@@ -6,15 +6,12 @@ import java.sql.SQLException;
 
 public class Util {
     // set up a database connection
+    private static final String user = "root";
+    private static final String pas = "1234";
+    private static final String url = "jdbc:mysql://localhost:3306/santosh";
+
     public static Connection getConnection() throws SQLException {
-        String user = "root";
-        String pas = "1234";
-        String url = "jdbc:mysql://localhost:3306/santosh";
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (ClassNotFoundException e) {
-            e.getStackTrace();
-        }
+
         return DriverManager.getConnection(url, user, pas);
     }
 }
